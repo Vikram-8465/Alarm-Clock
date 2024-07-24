@@ -1,18 +1,65 @@
-# Salesforce DX Project: Next Steps
+# Alarm Clock App
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A simple alarm clock application built using Lightning Web Components (LWC), deployed to a Salesforce org, and displayed on an LWR (Lightning Web Runtime) site.
 
-## How Do You Plan to Deploy Your Changes?
+### Features
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- Set an alarm time using a user-friendly interface.
+- Display the current time and update it every second.
+- Trigger an alert when the alarm goes off.
+- Clear the alarm with a single button click.
 
-## Configure Your Salesforce DX Project
+### Technologies Used
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+-  Lightning Web Components (LWC)
+-  Salesforce DX 
+-  HTML 
+-  CSS 
+-  JavaScript 
 
-## Read All About It
+### Installation
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+#### Prerequisites
+
+- Salesforce CLI: Install Salesforce CLI
+- Git: Install Git
+
+### Steps
+
+1.  Clone the Repository :
+   ```
+   git clone https://github.com/yourusername/alarm-clock-app.git
+   cd alarm-clock-app
+   ```
+2. Authorize Your Salesforce Org:
+   ```
+   sf org login web userName --alias
+    ```
+   
+4. set default org :
+   ```
+   sf config set targetorg userName/alias
+   ```
+
+6. Deploy the LWC Component:
+   ```
+   sf  project deploy start -d force-app/main/default/lwc
+   ```
+
+8. Open the Org:
+   ```
+   sf org open
+   ```
+
+### Usage
+
+ 1. Navigate to the LWR Site:
+   - Open Experience Builder in your Salesforce org.
+   - Add the alarmClock component to the desired page.
+   - Save and publish the site.
+     
+ 2. Set the Alarm:
+   - Use the input field to set the desired alarm time.
+   - Click the “Set Alarm” button to activate the alarm.
+   - An alert will trigger at the set time.
+   
