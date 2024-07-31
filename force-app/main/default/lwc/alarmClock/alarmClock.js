@@ -1,3 +1,5 @@
 import { LightningElement } from 'lwc';
 
-export default class AlarmClock extends LightningElement {}
+export default class AlarmClock extends LightningElement {
+    
+}
