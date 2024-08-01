@@ -1,3 +1,34 @@
 <template>
-    <h1>this is alarm app</h1>
+    <div class="alarm-container slds-grid slds-grid_align-center slds-grid_vertical-align-center">
+        <div class="alarm slds-var-p-around_medium ">
+            <h1>Alarm Clock</h1>
+            <!-- image come here -->
+            <img src={imageUrl} alt="alarm-image" class={getShakeClass} />
+            <!-- time come here -->
+            <h2>{currentTime}</h2>
+
+            <!-- set time -->
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-3">
+                    <c-clock-dropdown label="Hour(s)" options={hourOptions} onchild={changeHandler}></c-clock-dropdown>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <c-clock-dropdown label="Minute(s)" options={minuteOptions}
+                        onchild={changeHandler}></c-clock-dropdown>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <c-clock-dropdown label="AM/PM" options={ampmOptions} onchild={changeHandler}></c-clock-dropdown>
+                </div>
+            </div>
+            <template lwc:if={isAlarmSet}>
+                <button class="custom-button slds-button slds-button_neutral slds-button_stretch"
+                    onclick={alarmClearHandler}>Clear Alarm</button>
+            </template>
+            <template lwc:else>
+                <button class="custom-button slds-button slds-button_neutral slds-button_stretch"
+                    onclick={alarmSetHandler} disabled={isDisabled}>Set Alarm</button>
+            </template>
+
+        </div>
+    </div>
 </template>
