@@ -1,0 +1,90 @@
+:host {
+    --primary-color: #FFC300;
+    --secondary-color: #0C579E;
+    --text-color: white;
+    --button-text-color: #1c1b1b;
+    --gradient-bg: linear-gradient(to left, #5433ff, #20bdff, #a5fecb);
+    --alarm-width: 410px;
+    --border-radius: 5px;
+    --h1-font-size: 2rem;
+    --h2-font-size: 2.5rem;
+    --h2-margin-bottom: 10px;
+    --h2-font-weight: 600;
+    --button-font-size: 1.5rem;
+    --img-height: 130px;
+    --img-margin: 20px auto;
+}
+
+.alarm-container {
+    background: var(--gradient-bg) !important;
+    height: 100vh;
+    width: 100vw;
+}
+
+.alarm {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    width: var(--alarm-width);
+    border-radius: var(--border-radius);
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--h2-margin-bottom);
+    color: var(--primary-color);
+    font-weight: var(--h2-font-weight);
+}
+
+.custom-button {
+    background-color: var(--primary-color);
+    border: none;
+    font-size: var(--button-font-size);
+    color: var(--button-text-color);
+}
+
+img {
+    height: var(--img-height);
+    margin: var(--img-margin);
+}
+
+img.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.custom-button:hover {
+    background-color: #c49600;
+    color: var(--button-text-color);
+    cursor: pointer;
+}
+
+.custom-button:active {
+    background-color: #c49600;
+    color: var(--button-text-color);
+}
+
+.custom-button:disabled {
+    background-color: whitesmoke;
+    color: var(--button-text-color);
+    cursor: not-allowed;
+}
